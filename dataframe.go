@@ -28,7 +28,7 @@ type DataSet struct {
 	index int
 }
 
-// A DataFrame is a table where columns are variables and rows are measurements.
+// DataFrame - is a table where columns are variables and rows are measurements.
 // Each row contains an instance. Each variable can have a different type.
 type DataFrame struct {
 
@@ -51,7 +51,7 @@ type DataFrame struct {
 	varMap map[string]int
 }
 
-// Reads a list of filenames from a file. See ReadDataSetReader()
+// ReadDataSetFile - a list of filenames from a file. See ReadDataSetReader()
 func ReadDataSetFile(fn string) (ds *DataSet, e error) {
 
 	f, e := os.Open(fn)
