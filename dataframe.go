@@ -21,7 +21,8 @@ const (
 	BUFFER_SIZE = 1000
 )
 
-// A list of dataframe files. Each file must have the same dataframe schema.
+// DataSet  - a list of dataframe files.
+// Each file must have the same dataframe schema.
 type DataSet struct {
 	Path  string   `yaml:"path"`
 	Files []string `yaml:"files"`
@@ -62,7 +63,7 @@ func ReadDataSetFile(fn string) (ds *DataSet, e error) {
 	return
 }
 
-// Reads a list of filenames from an io.Reader.
+// ReadDataSet - Reads a list of filenames from an io.Reader.
 func ReadDataSet(r io.Reader) (ds *DataSet, e error) {
 
 	var b []byte
@@ -101,7 +102,7 @@ func (ds *DataSet) Next() (df *DataFrame, e error) {
 	return
 }
 
-// Reads feature from file.
+// ReadDAtaFrameFile - Reads feature from file.
 func ReadDataFrameFile(fn string) (df *DataFrame, e error) {
 
 	f, e := os.Open(fn)
